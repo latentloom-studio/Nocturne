@@ -1551,6 +1551,11 @@ function loop(now){
 camera.position.set(11,11,16);
 requestAnimationFrame(loop);
 <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+  }
+</script>
+<script>
   // PWA Install Button logic
   let deferredPrompt;
   const installBtn = document.createElement('button');
